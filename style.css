@@ -135,6 +135,29 @@ section .main-btn i{
 section .main-btn:hover i{
     transform: translateX(7px);
 }
+
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+    .main {
+        flex-direction: column;
+        text-align: center;
+    }
+    .main-image img {
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .men-text h1 {
+        font-size: 2rem;
+    }
+    .main-btn a {
+        padding: 8px 15px;
+    }
+}
+
 /* about */
 .about{
     width: 100%;
@@ -179,6 +202,16 @@ section .main-btn:hover i{
     position: relative;
     left: 55%;
     bottom: 30px;
+}
+
+@media (max-width: 768px) {
+    .about-main {
+        flex-direction: column;
+        text-align: center;
+    }
+    .about-text {
+        text-align: center;
+    }
 }
 
 
@@ -314,6 +347,49 @@ transform: scale(1.1);
     background-color: #fac031;
 }
 
+@media (max-width: 768px) {
+    .menu h1 {
+        font-size: 2rem;
+    }
+    .menu-box {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .menu-card {
+        padding: 10px;
+    }
+    .menu-info h2 {
+        font-size: 1.2rem;
+    }
+    .menu-info p {
+        font-size: 0.9rem;
+    }
+    .menu-btn {
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu h1 {
+        font-size: 1.8rem;
+    }
+    .menu-box {
+        grid-template-columns: 1fr;
+    }
+    .menu-card {
+        padding: 8px;
+    }
+    .menu-info h2 {
+        font-size: 1rem;
+    }
+    .menu-info p {
+        font-size: 0.8rem;
+    }
+    .menu-btn {
+        padding: 6px 12px;
+    }
+}
+
+
 /* Gallary */
 .gallary{
     width: 100%;
@@ -410,6 +486,32 @@ background-color: #000;
     transform: translateY(0);
 }
 
+
+@media screen and (max-width: 768px) {
+    .gallary h1 {
+        font-size: 2rem;
+    }
+
+    .gallary-image-box {
+        grid-template-columns: 1fr;
+    }
+
+    .gallary-image {
+        padding: 10px;
+    }
+
+    .gallary-image h3 {
+        font-size: 1.3rem;
+    }
+
+    .gallary-image p {
+        font-size: 0.9rem;
+    }
+
+    .gallary-btn {
+        padding: 8px 16px;
+    }
+}
 
 /* Review */
 
@@ -510,6 +612,36 @@ background-color: #000;
     margin-top: 5px;
 }
 
+@media screen and (max-width: 768px) {
+    .review h1 {
+        font-size: 2rem;
+    }
+
+    .review-box {
+        grid-template-columns: 1fr;
+    }
+
+    .review-card {
+        padding: 15px;
+    }
+
+    .review-text .name {
+        font-size: 1.3rem;
+    }
+
+    .review-icon i {
+        font-size: 1rem;
+    }
+
+    .review-social i {
+        font-size: 1rem;
+    }
+
+    .review-text p {
+        font-size: 0.9rem;
+    }
+}
+
 
 /* order */
 .order{
@@ -586,6 +718,40 @@ background-color: #000;
 .order .order-main form .order-btn:hover{
     color: #eeeeee;
     background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+    .order h1 {
+        font-size: 2rem;
+    }
+
+    .order-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .order-image img {
+        max-width: 300px;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+    .input p {
+        font-size: 0.9rem;
+    }
+
+    .input input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .order-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
 }
 
 
@@ -688,6 +854,32 @@ background-color: #000;
     color: #fac031;
 }
 
+@media screen and (max-width: 768px) {
+    .team h1 {
+        font-size: 2rem;
+    }
+
+    .team-box {
+        grid-template-columns: 1fr;
+    }
+
+    .profile {
+        padding: 15px;
+    }
+
+    .name {
+        font-size: 1.3rem;
+    }
+
+    .bio {
+        font-size: 0.9rem;
+    }
+
+    .team-icon i {
+        font-size: 1rem;
+    }
+}
+
 
 /* footer */
 footer{
@@ -738,4 +930,19 @@ footer .end span{
 ::-webkit-scrollbar-thumb{
     background: #fac031;
     border-radius: 15px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-tag {
+        margin-bottom: 20px;
+    }
+
+    .footer-tag i {
+        font-size: 1.2rem;
+    }
 }
