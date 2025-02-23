@@ -136,25 +136,74 @@ section .main-btn:hover i{
     transform: translateX(7px);
 }
 
-@media screen and (max-width: 768px) {
-    nav ul {
-        display: none;
+
+@media (max-width: 768px) {
+    section nav {
+        flex-direction: row;
+        padding: 10px 20px;
     }
-    .main {
-        flex-direction: column;
+
+    section nav ul {
+        display: none; /* মোবাইলের জন্য মেনু প্রথমে হাইড থাকবে */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: white;
         text-align: center;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
-    .main-image img {
-        max-width: 300px;
+
+    section nav ul.show {
+        display: block;
+    }
+
+    section nav ul li {
+        display: block;
+        margin: 15px 0;
+    }
+
+    section nav .icon {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    section .main {
+        flex-direction: column;
+    }
+
+    section .main .men-text h1 {
+        font-size: 40px;
+    }
+
+    section .main .men-text h1 span {
+        font-size: 50px;
+    }
+
+    section .main .main-image img {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    section p {
+        width: 90%;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .men-text h1 {
-        font-size: 2rem;
+/* ছোট স্ক্রিনের জন্য (৪৮০px এর কম) */
+@media (max-width: 480px) {
+    section .main .men-text h1 {
+        font-size: 35px;
     }
-    .main-btn a {
-        padding: 8px 15px;
+
+    section .main .men-text h1 span {
+        font-size: 45px;
+    }
+
+    section .main .main-image img {
+        width: 100%;
+        max-width: 300px;
     }
 }
 
@@ -205,12 +254,53 @@ section .main-btn:hover i{
 }
 
 @media (max-width: 768px) {
-    .about-main {
+    .about .about-main {
         flex-direction: column;
         text-align: center;
     }
-    .about-text {
-        text-align: center;
+
+    .about .about-main .image img {
+        width: 100%;
+        max-width: 400px;
+        margin-bottom: 20px;
+    }
+
+    .about .about-main .about-text h1 {
+        font-size: 35px;
+    }
+
+    .about .about-main .about-text h3 {
+        font-size: 22px;
+    }
+
+    .about .about-main .about-text p {
+        font-size: 16px;
+        margin: 0 auto;
+    }
+
+    .about .about-btn {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+/* ছোট স্ক্রিন (৪৮০px এর কম) */
+@media (max-width: 480px) {
+    .about .about-main .about-text h1 {
+        font-size: 30px;
+    }
+
+    .about .about-main .about-text h3 {
+        font-size: 18px;
+    }
+
+    .about .about-main .about-text p {
+        font-size: 14px;
+    }
+
+    .about .about-btn {
+        font-size: 14px;
+        padding: 10px 20px;
     }
 }
 
@@ -347,48 +437,65 @@ transform: scale(1.1);
     background-color: #fac031;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .menu h1 {
-        font-size: 2rem;
+        font-size: 40px;
     }
-    .menu-box {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 768px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .menu-card {
-        padding: 10px;
+
+    .menu .menu-box .menu-card {
+        max-width: 280px;
     }
-    .menu-info h2 {
-        font-size: 1.2rem;
+
+    .menu .menu-box .menu-card .menu-info h2 {
+        font-size: 20px;
     }
-    .menu-info p {
-        font-size: 0.9rem;
+
+    .menu .menu-box .menu-card .menu-info p {
+        font-size: 14px;
     }
-    .menu-btn {
-        padding: 8px 15px;
+
+    .menu .menu-box .menu-card .menu-info .menu-btn {
+        width: 80%;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
+    .menu .menu-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     .menu h1 {
-        font-size: 1.8rem;
+        font-size: 35px;
     }
-    .menu-box {
-        grid-template-columns: 1fr;
+
+    .menu .menu-box .menu-card {
+        max-width: 100%;
     }
-    .menu-card {
-        padding: 8px;
+
+    .menu .menu-box .menu-card .menu-info h2 {
+        font-size: 18px;
     }
-    .menu-info h2 {
-        font-size: 1rem;
+
+    .menu .menu-box .menu-card .menu-info p {
+        font-size: 14px;
     }
-    .menu-info p {
-        font-size: 0.8rem;
-    }
-    .menu-btn {
-        padding: 6px 12px;
+
+    .menu .menu-box .menu-card .menu-info .menu-btn {
+        width: 90%;
+        font-size: 14px;
     }
 }
-
 
 /* Gallary */
 .gallary{
@@ -487,29 +594,60 @@ background-color: #000;
 }
 
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
+    .gallary .gallary-image-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .gallary h1 {
-        font-size: 2rem;
+        font-size: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallary .gallary-image-box {
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
     }
 
-    .gallary-image-box {
-        grid-template-columns: 1fr;
+    .gallary h1 {
+        font-size: 35px;
     }
 
-    .gallary-image {
-        padding: 10px;
+    .gallary .gallary-image-box .gallary-image h3 {
+        font-size: 22px;
     }
 
-    .gallary-image h3 {
-        font-size: 1.3rem;
+    .gallary .gallary-image-box .gallary-image p {
+        font-size: 14px;
+        width: 90%;
     }
 
-    .gallary-image p {
-        font-size: 0.9rem;
+    .gallary .gallary-image-box .gallary-image .gallary-btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallary .gallary-image-box {
+        grid-template-columns: repeat(1, 1fr);
     }
 
-    .gallary-btn {
-        padding: 8px 16px;
+    .gallary h1 {
+        font-size: 30px;
+    }
+
+    .gallary .gallary-image-box .gallary-image h3 {
+        font-size: 20px;
+    }
+
+    .gallary .gallary-image-box .gallary-image p {
+        font-size: 12px;
+        width: 90%;
+    }
+
+    .gallary .gallary-image-box .gallary-image .gallary-btn {
+        font-size: 12px;
     }
 }
 
@@ -612,37 +750,62 @@ background-color: #000;
     margin-top: 5px;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
+    .review .review-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .review h1 {
-        font-size: 2rem;
-    }
-
-    .review-box {
-        grid-template-columns: 1fr;
-    }
-
-    .review-card {
-        padding: 15px;
-    }
-
-    .review-text .name {
-        font-size: 1.3rem;
-    }
-
-    .review-icon i {
-        font-size: 1rem;
-    }
-
-    .review-social i {
-        font-size: 1rem;
-    }
-
-    .review-text p {
-        font-size: 0.9rem;
+        font-size: 40px;
     }
 }
 
+@media (max-width: 768px) {
+    .review .review-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
 
+    .review h1 {
+        font-size: 35px;
+    }
+
+    .review .review-box .review-card .review-profile img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .review .review-box .review-card .review-text .name {
+        font-size: 18px;
+    }
+
+    .review .review-box .review-card .review-text p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .review .review-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .review h1 {
+        font-size: 30px;
+    }
+
+    .review .review-box .review-card .review-profile img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .review .review-box .review-card .review-text .name {
+        font-size: 16px;
+    }
+
+    .review .review-box .review-card .review-text p {
+        font-size: 12px;
+    }
+}
 /* order */
 .order{
     width: 100%;
@@ -720,37 +883,71 @@ background-color: #000;
     background-color: #000;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
     .order h1 {
-        font-size: 2rem;
+        font-size: 40px;
     }
-
-    .order-main {
+    
+    .order .order-main {
         flex-direction: column;
         text-align: center;
     }
 
-    .order-image img {
-        max-width: 300px;
+    .order .order-main .order-image {
+        margin-bottom: 20px;
     }
 
-    form {
-        max-width: 100%;
-        padding: 15px;
+    .order .order-main form {
+        grid-template-columns: 1fr;
+        max-width: 400px;
     }
 
-    .input p {
-        font-size: 0.9rem;
+    .order .order-main form .order-btn {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .order h1 {
+        font-size: 35px;
     }
 
-    .input input {
-        font-size: 0.9rem;
-        padding: 8px;
+    .order .order-main form {
+        max-width: 350px;
     }
 
-    .order-btn {
-        font-size: 1rem;
+    .order .order-main form .input input {
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .order .order-main form .order-btn {
         padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order h1 {
+        font-size: 30px;
+    }
+
+    .order .order-main form {
+        max-width: 100%;
+    }
+
+    .order .order-main .order-image img {
+        max-width: 350px;
+    }
+
+    .order .order-main form .input input {
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .order .order-main form .order-btn {
+        font-size: 13px;
+        padding: 8px;
     }
 }
 
@@ -854,32 +1051,82 @@ background-color: #000;
     color: #fac031;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 1024px) {
+    .team .team-box {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .team h1 {
-        font-size: 2rem;
+        font-size: 40px;
     }
 
-    .team-box {
-        grid-template-columns: 1fr;
+    .team .team-box .profile {
+        width: 250px;
+        height: 250px;
     }
 
-    .profile {
-        padding: 15px;
-    }
-
-    .name {
-        font-size: 1.3rem;
-    }
-
-    .bio {
-        font-size: 0.9rem;
-    }
-
-    .team-icon i {
-        font-size: 1rem;
+    .team .team-box .profile img {
+        width: 180px;
+        height: 180px;
     }
 }
 
+@media (max-width: 768px) {
+    .team .team-box {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .team h1 {
+        font-size: 35px;
+    }
+
+    .team .team-box .profile {
+        width: 230px;
+        height: 230px;
+    }
+
+    .team .team-box .profile img {
+        width: 160px;
+        height: 160px;
+    }
+
+    .team .team-box .profile .info .name {
+        font-size: 16px;
+    }
+
+    .team .team-box .profile .info .bio {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team .team-box {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .team h1 {
+        font-size: 30px;
+    }
+
+    .team .team-box .profile {
+        width: 200px;
+        height: 200px;
+    }
+
+    .team .team-box .profile img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .team .team-box .profile .info .name {
+        font-size: 14px;
+    }
+
+    .team .team-box .profile .info .bio {
+        font-size: 12px;
+    }
+}
 
 /* footer */
 footer{
@@ -932,17 +1179,61 @@ footer .end span{
     border-radius: 15px;
 }
 
-@media screen and (max-width: 768px) {
-    .footer-main {
-        flex-direction: column;
-        text-align: center;
+@media (max-width: 1024px) {
+    footer .footer-main {
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .footer-tag {
-        margin-bottom: 20px;
+    footer .footer-main .footer-tag h2 {
+        font-size: 22px;
     }
 
-    .footer-tag i {
-        font-size: 1.2rem;
+    footer .footer-main .footer-tag p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    footer .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    footer .footer-main .footer-tag h2 {
+        font-size: 20px;
+    }
+
+    footer .footer-main .footer-tag p {
+        font-size: 12px;
+    }
+
+    footer .footer-main .footer-tag i {
+        font-size: 16px;
+    }
+
+    footer .end {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    footer .footer-main {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer .footer-main .footer-tag h2 {
+        font-size: 18px;
+    }
+
+    footer .footer-main .footer-tag p {
+        font-size: 12px;
+    }
+
+    footer .footer-main .footer-tag i {
+        font-size: 14px;
+    }
+
+    footer .end {
+        font-size: 11px;
     }
 }
