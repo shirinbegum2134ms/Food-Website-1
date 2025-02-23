@@ -144,7 +144,7 @@ section .main-btn:hover i{
     }
 
     section nav ul {
-        display: none; /* মোবাইলের জন্য মেনু প্রথমে হাইড থাকবে */
+        display: none; 
         position: absolute;
         top: 60px;
         left: 0;
@@ -191,7 +191,7 @@ section .main-btn:hover i{
     }
 }
 
-/* ছোট স্ক্রিনের জন্য (৪৮০px এর কম) */
+
 @media (max-width: 480px) {
     section .main .men-text h1 {
         font-size: 35px;
@@ -284,7 +284,7 @@ section .main-btn:hover i{
     }
 }
 
-/* ছোট স্ক্রিন (৪৮০px এর কম) */
+
 @media (max-width: 480px) {
     .about .about-main .about-text h1 {
         font-size: 30px;
